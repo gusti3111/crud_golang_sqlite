@@ -1,0 +1,58 @@
+<!-- link ke template title in base html -->
+{{define "title"}}
+TODO APP
+{{end}}
+
+{{define "css"}}
+<!-- link to datatables css -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+{{end}}
+
+{{define "script"}}
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.table').DataTable()
+  })
+
+</script>
+
+{{end}}
+
+{{define "main"}}
+   <h1 class="display-6 mt-5">Todo List</h1>
+   <a class="btn btn-danger mb-5" href="/create"><i class="fa-solid fa-plus"></i>Create</a>
+
+   <table class="table table-striped">
+    <thead>
+      <tr>
+       
+         <th>Task</th>
+         <th>Name</th>
+      
+        <th>Deadline</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range $todo := .Todos}}
+        <tr>
+           <td>{{$todo.Content}}</td>
+           <td>{{$todo.Name}}</td>
+           <td>{{$todo.Date}}</td>
+           <td>
+             {{if $todo.IsDone}}
+             <button type="button" class="btn btn-success">Done</button>
+             {{else}}
+             <a href="#" class="btn btn-danger">Edit</a>
+             <a href="#" class="btn btn-info">Done</a>
+             {{end}}
+           
+           </td>
+        </tr>
+      {{end}}
+    </tbody>
+   </table>
+
+{{end}}

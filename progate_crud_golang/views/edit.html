@@ -1,0 +1,19 @@
+{{define "title"}}
+ Edit Tasks
+{{end}}
+
+{{define "css"}}
+
+{{end}}
+{{define "main"}}
+<form action="post" action="">
+  <h1>Edit Task</h1>
+  <div class="row nb-2">
+    <div></div>
+    <div>
+      <textarea name="content" id="" class="form-control">
+        {{.Note.Content}}
+      </textarea>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,57 @@
+{{define "title"}}
+Tambah Tasks
+{{end}}
+
+{{define "css"}}
+{{end}}
+
+{{define "script"}}
+{{end}}
+
+{{define "main"}}
+<form action="" method="post">
+  <h1 class="display-6">Create Tasks</h1>
+
+<!-- Task -->
+  <div class="row mb-2">
+    <div class="col-2" style="text-align: end">Task Detail</div>
+    <div class="col-6">
+      <textarea name="content" placeholder="masukan Task" class="form-control" ></textarea>
+    </div>
+  </div>
+<!-- Name -->
+  <div class="row mb-2">
+    <div class="col-2" style="text-align: end">Name</div>
+    <div class="col-6">
+
+      <input class="from-control" type="text" name="name" placeholder="Masukan Penerima">
+   
+    </div>
+  </div>
+
+  <!-- Deadline -->
+  <div class="row mb-2">
+    <div class="col-2" style="text-align: end">Deadline</div>
+    <div class="col-6">
+
+      <input class="from-control" type="date" name="date" >
+   
+    </div>
+  </div>
+  <!-- button -->
+  <div class="row mb-2">
+    <div class="col-6 offset-2">
+      <button type="submit" class="btn btn-outline-success">Submit</button>
+
+
+      
+    </div>
+  </div>
+
+  
+
+  
+  
+  
+</form>
+{{end}}
